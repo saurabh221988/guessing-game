@@ -1,12 +1,12 @@
-all: README.md update
+all: create update
 
-README.md:
+create:
 	touch README.md
-	echo "The Guessing Game" > README.md
+	printf "## The Guessing Game\n\n" > README.md
 
 update:
-	echo "Date and time last make run: $$(date)" >> README.md
-	echo "Number of lines in guseeinggame.sh: $$(wc -l < guessinggame.sh)" >> README.md
+	printf "# Date and time last make run: $$(date)\n\n" >> README.md
+	printf "# Number of lines in guseeinggame.sh: $$(wc -l < guessinggame.sh)\n\n" >> README.md
 
 clean:
 	rm README.md
